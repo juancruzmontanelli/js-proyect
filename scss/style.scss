@@ -1,0 +1,298 @@
+@import "variable";
+
+.slider {
+    overflow: hidden;
+
+    figure { 
+        position: relative;
+        width: 500%;
+        margin: 0;
+        left: 0;
+        animation: 15s slider infinite;
+
+        img {
+            width: 20%;
+            height: 20rem;
+            float:left; 
+        }
+    }
+}
+
+@keyframes slider {
+    0% {
+        left: 0;
+    }
+    20% {
+        left: 0;
+    }
+    25% {
+        left: -100%;
+    }
+    45% {
+        left: -100%;
+    }
+    50% {
+        left: -200%;
+    }
+    70% {
+        left: -200%;
+    }
+    75% {
+        left: -300%;
+    }
+    95% {
+        left: -300%;
+    }
+    100% {
+        left: -400%;
+    }
+
+}
+
+.block_text {
+    grid-area: block1;
+    width: 18rem;
+    background-color:rgb(233, 233, 233);
+    margin: auto;
+    margin-top: 6rem;
+    padding: 1rem;
+}
+
+.block_text1{
+    grid-area: block2;
+    width: 18rem;
+    margin: auto;
+    background-color:rgb(233, 233, 233);
+    margin-top: 2rem;
+    padding: 1rem; 
+    
+    
+}
+
+.block_text2 {
+    grid-area: block1;
+    width: 18rem;
+    background-color:rgb(233, 233, 233);
+    margin: auto;
+    margin-top: 6rem;
+    padding: 1rem;
+}
+
+
+.footer_container {
+    position: relative;
+    min-height: 20rem;
+}
+
+.background_footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 0.5rem;
+    background-color:rgb(233, 233, 233);
+}
+
+body {
+    background-image: url("../img/background.jpg");
+}
+
+.text_center {
+    text-align: center;
+}
+
+.sizes_input {
+    width: 8rem;
+
+}
+.sizes_mail {
+    width: 10rem;
+}
+
+.margin {
+    margin: 0rem;
+}
+
+.sizes_text {
+    width: 10rem;
+}
+
+.flex_contact {
+    display: flex;
+}
+
+.background_contact {
+    margin: 1rem ;
+    padding: 2rem;
+    background-color:rgb(231, 231, 225); 
+}
+
+.card_block {
+    @include sizes(20rem,25rem);
+    padding: 2rem;
+    margin: 1rem;
+    border: none;
+    background-color:rgb(233, 233, 233);
+    position: relative;
+    text-align: center;
+
+    img {
+        @include sizes(12rem,15rem);
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+.flex_card {
+    display:flex; 
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.logo {
+    width: 3rem;
+    height: 2rem;
+}
+
+
+
+
+
+
+
+
+@media screen and (min-width:720px){
+    .footer_container {
+        position: relative;
+        min-height: 35rem;
+    }
+    
+    .grid_block {
+        display: grid;
+        grid-template-areas: 
+        "block block1";
+        grid-template-columns: 1rem 1rem;
+    }
+
+    .block_text {
+        grid-area: block1;
+        width: 20rem;
+        margin: 1rem;
+        margin-top: 4rem;
+    }
+
+    .block_text1{
+        grid-area: block2;
+        width: 20rem;
+        margin: 1rem;
+        margin-right: 4rem;
+        justify-self: end;
+        
+    }
+
+    .block_text2 {
+        grid-area: block1;
+        width: 30rem;
+        margin: auto;
+        margin-top: 6rem;
+    }
+}
+
+@media screen and (min-width:1024px) {
+    
+
+    .slider {
+        figure { 
+            img {
+                height: 40rem; 
+            }
+        }
+    }
+
+    .grid_block {
+        display: grid;
+        grid-template-areas: 
+        "block block1";
+        grid-template-columns: 1rem 1rem;
+    }
+
+    .block_text {
+        grid-area: block1;
+        width: 20rem;
+        margin: 1rem;
+        margin-top: 4rem;
+        
+    }
+
+    .block_text1{
+        grid-area: block2;
+        width: 20rem;
+        margin: 1rem;
+        margin-right: 4rem;
+        justify-self: end;
+        
+    }
+
+    .block_text2 {
+        grid-area: block1;
+        width: 50rem;
+        margin: auto;
+        margin-top: 6rem;
+    }
+
+    body {
+        background-image: url("../img/background.jpg");
+    }
+
+
+    .text_center {
+        text-align: center;
+    }
+
+    .sizes_input {
+        width: 15rem;
+
+    }
+    .sizes_mail {
+        width: 20rem;
+    }
+
+    .margin {
+        margin: 3rem;
+    }
+
+    .sizes_text {
+        width: 40rem;
+    }
+
+    .flex_contact {
+        display: flex;
+    }
+
+    .background_contact {
+        margin: 1rem ;
+        padding: 1rem;
+        background-color:rgb(231, 231, 225); 
+    }
+
+    .card_block {
+        @include sizes(20rem,25rem);
+        padding: 2rem;
+        margin: 1rem;
+        background-color:rgb(233, 233, 233);
+        position: relative;
+        text-align: center;
+
+        img {
+            @include sizes(12rem,15rem);
+            display: block;
+            margin: 0 auto;
+        }
+    }
+
+    .flex_card {
+        display:flex; 
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+}
