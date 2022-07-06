@@ -37,6 +37,9 @@
             <li class="nav-item">
             <a class="nav-link" href="../pages/contact.html">contact</a>
             </li>
+            <li class="nav-item">
+            <a class="nav-link" href="../pages/cart.html">cart</a>
+            </li>
         </ul>
         </div>
     </nav>
@@ -44,53 +47,67 @@
 
 <main>
     <article class="flex_card">
-        <button class="card_block wow animate__animated animate__bounceInLeft">
-            <img src="../img/flying moon.jpg" alt="raven">
-            <h3>flying moon</h3>
-            <h5>ARS$ 13.400 </h5>
-        </button>
+        <div class=" card_block wow animate__animated animate__bounceInLeft">
+            <img src="../img/flying moon.jpg" alt="raven" id="img">
+            <h3 class="content" id="name">flying moon</h3>        
+            <h5 class="content" id="price">ARS$ 13.400 </h5>
+            <button type="submit" id="add_1">add to the cart</button>
+        </div>
 
-        <button class="card_block wow animate__animated animate__bounceInLeft">
+
+
+        <div class="card_block wow animate__animated animate__bounceInLeft">
             <img src="../img/raven water color.jpeg" alt="city draw">
             <h3>waver</h3>
             <h5>ARS$15.200 </h5>
-        </button>
+            <button type="submit" id="add_2">add to the cart</button>
+        </div>
 
-        <button class="card_block wow animate__animated animate__bounceInLeft">
+        <div class="card_block wow animate__animated animate__bounceInLeft">
             <img src="../img/snowland.jpg" alt="city draw">
             <h3>snowdy</h3>
             <h5>ARS$ 12.100 </h5>
-        </button>
+            <button type="submit">add to the cart</button>
+        </div>
 
-        <button class="card_block wow animate__animated animate__bounceInLeft">
+        <div class="card_block wow animate__animated animate__bounceInLeft">
             <img src="../img/wales wolrd.jpeg" alt="city draw">
             <h3>woolp</h3>
             <h5>ARS$ 16.800 </h5>
-        </button>
+            <button type="submit">add to the cart</button>
+        </div>
 
-        <button class="card_block wow animate__animated animate__bounceInLeft">
+        <div class="card_block wow animate__animated animate__bounceInLeft">
             <img src="../img/watercolor green.jpg" alt="city draw">
             <h3>blurredl</h3>
             <h5>ARS$ 12.900 </h5>
-        </button>
+            <button type="submit">add to the cart</button>
+        </div>
 
-        <button class="card_block wow animate__animated animate__bounceInLeft">
+        <div class="card_block wow animate__animated animate__bounceInLeft">
             <img src="../img/watercolor japan.jpg" alt="city draw">
             <h3>peace shogun</h3>
             <h5>ARS$ 15.300 </h5>
-        </button>
+            <button type="submit">add to the cart</button>
+        </div>
 
-        <button class="card_block wow animate__animated animate__bounceInLeft">
+        <div class="card_block wow animate__animated animate__bounceInLeft">
             <img src="../img/watercolor rino.webp" alt="city draw">
             <h3>ri no</h3>
             <h5>ARS$ 10.900 </h5>
-        </button>
+            <button type="submit">add to the cart</button>
+        </div>
     </article>
     
     <section class="block_text2 wow animate__animated animate__backInUp">
         <h2 class="text_center"> Special Promotion </h2>
         <h5> if you buy 2 of our product you will have a discount of 50% on the second piece</h5>
     </section>
+    
+    <h2 class="background_contact">cart</h2>
+    <div class="background_contact wow animate__animated animate__fadeIn flex_card" id="cart">
+        
+    </div>
 </main>
 <div class="footer_container wow animate__animated animate__fadeInUp">
     <footer class="background_footer">
@@ -104,7 +121,7 @@
 </div>
 
 
-<script src="../store.js"></script>
+<script src="../producto.js"></script>
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

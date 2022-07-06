@@ -14,10 +14,11 @@ function ivaPrice (number) {
 
 
 class picture {
-    constructor (id,name, cost) {
+    constructor (id,name, cost, img) {
         this.id = id;
         this.name = name; 
         this.price = parseFloat(cost);
+        this.img = img
         this.sold = false;
     
     }
