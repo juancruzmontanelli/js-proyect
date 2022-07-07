@@ -1,9 +1,11 @@
+
+
 class picture {
     constructor (id,name, cost, img) {
         this.id = id;
         this.name = name; 
-        this.price = parseInt(cost);
-        this.img = img;
+        this.price = parseFloat(cost);
+        this.img = img
         this.sold = false;
     
     }
@@ -11,12 +13,13 @@ class picture {
         this.sold = true; 
     }
 }
-const artPieces = [];
 
+const artPieces = [];
 
 
 let cart = document.getElementById('cart')
 
+let cartChild = document.getElementById('cartChild')
 
 let add1 = document.getElementById('add_1'); 
 
@@ -37,10 +40,10 @@ add1.onclick = () => {
                                 <h3>${picture1.name}</h3>
                                 <h5>ARS$${picture1.price} </h5>
                                 </div>`;
-    cart.appendChild(contiener);
+    cartChild.appendChild(contiener);
     
-
-sessionStorage.setItem('cart',artPieces)
+let artPiece_serialized = JSON.stringify(artPieces)
+sessionStorage.setItem('cart',artPiece_serialized)
 
 let sesionCart = sessionStorage.getItem('cart');
 
@@ -63,19 +66,37 @@ add2.onclick = () => {
     console.log(artPieces)
 
 
-sessionStorage.setItem('cart',artPieces)
+    let contiener = document.createElement('div'); 
+
+    contiener.innerHTML = `<div class="card_block wow animate__animated animate__bounceInLeft products">
+                            <h3>${picture2.name}</h3>
+                            <h5>ARS$${picture2.price} </h5>
+                            </div>`;
+cartChild.appendChild(contiener);
+
+let artPiece_serialized = JSON.stringify(artPieces)
+sessionStorage.setItem('cart',artPiece_serialized)
 
 let sesionCart = sessionStorage.getItem('cart');
 
 console.log(sesionCart);
 
+
+};
+
+let buy = document.getElementById('buy');
+
+
+
+const buyValid = (event) =>  {
+    event.preventDefault();
+    
     let contiener = document.createElement('div'); 
 
-    contiener.innerHTML = `<div class="card_block wow animate__animated animate__bounceInLeft">
-                            <h3>${picture2.name}</h3>
-                            <h5>ARS$${picture2.price} </h5>
-                            </div>`;
-cart.appendChild(contiener);
+    contiener.innerHTML = '<h2> Buy competed! </h2>'
+    
+    cart.appendChild(contiener);
+};
 
+cart.addEventListener('submit',buyValid);
 
-}
