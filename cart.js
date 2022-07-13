@@ -17,7 +17,30 @@ class picture {
     }
 }
 
+
+function agregarProducto(comp) {
+    let id = comp.id;
+    for (const data of datos) {
+
+        if (id == data.id) {c
+            onsole.log(data);
+            productosCarrito.push(Number(data)); 
+            console.log(productosCarrito);             
+        }
+    }
+}
+let contenedorProductos = document.getElementById('productos');
 const cartProducts = [];
+
+const productos = [new picture(1,'flying moon',13400,'./img/flying moon.jpg'), new picture(2,'waver',15200)]; 
+for (let producto of productos) {
+    contenedorProductos.innerHTML += `<div class=" card_block wow animate__animated animate__bounceInLeft">
+                                        <img src=${producto.img}>
+                                        <h3 class="content">${producto.name}</h3>        
+                                        <h5 class="content">ARS$ ${producto.price}</h5>
+                                        <button type="submit" id="${producto.id}">add to the cart</button>
+                                    </div>`
+}
 
 const cartPrice = [];
 let cart = document.getElementById('cart')
@@ -49,47 +72,13 @@ total.append(totalContainer);
 
 let contiener = document.createElement('div'); 
 
-add1.onclick = () => {
-    const picture1 = new picture(1,'flying moon',13400)
-    cartProducts.push(picture1)
-
-    const {id, name, price, img,} = picture1;
-
-    cartPrice.push(price);
-    totalContainer.innerText = `ARS$ ${plus(...cartPrice)}`;
-
-    console.log(id)
-    console.log(name)
-    console.log(img)
-    console.log(price)
-    console.log(cart)
-
-
-    
-        contiener.innerHTML = `<div class="card_block wow animate__animated animate__bounceInLeft">
-                                <h3>${picture1.name}</h3>
-                                <h5>ARS$${picture1.price} </h5>
-                                </div>`;
-    cartChild.appendChild(contiener);
-    
-    
-    empty.remove();
-
-    total.append(totalContainer);
-let artPiece_serialized = JSON.stringify(cartProducts)
-sessionStorage.setItem('cart',artPiece_serialized)
-
-let sesionCart = sessionStorage.getItem('cart');
-
-console.log(sesionCart);
-
-};
 
 let add2 = document.getElementById('add_2'); 
 
 
 
-add2.onclick = () => {
+
+/* add2.onclick = () => {
     const picture2 = new picture(2,'waver',15200)
     cartProducts.push(picture2)
 
@@ -126,24 +115,47 @@ console.log(sesionCart);
 
 
 };
-
+*/
 
 
 let buy = document.getElementById('buy');
 
-
+lettry = document.getElementById('try');
 
 
 buy.onclick = (event) =>   {
     event.preventDefault();
     
-    let competedBuy= document.createElement('h2'); 
-
-    competedBuy.innerText = 'Buy competed!';
-
-    contiener.remove()
     
-    cartChild.append(competedBuy);
+    cartChild.innerHTML = '<h2>Buy competed!</h2>'
+    contiener.remove()
+    Toastify({
+
+        text: "the buy is completed",
+        
+        duration: 3000 , 
+
+        style: {
+            background: 'linear-gradient(to right, #72CC8F, #96c92d)'
+        }
+        
+        }).showToast();
+    
+
 };
+
+
+let example = document.getElementById('try');
+
+example.addEventListener('click',() => { 
+    Toastify({
+
+        text: "This is a toast",
+        
+        duration: 3000
+        
+        }).showToast();
+    
+})
 
 

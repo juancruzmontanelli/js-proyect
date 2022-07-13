@@ -15,5 +15,8 @@
     "url": "https://github.com/KakuMontaneli/js-proyect/issues"
   },
   "homepage": "https://github.com/KakuMontaneli/js-proyect#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "sweetalert2": "^11.4.20"
+  }
 }
