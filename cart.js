@@ -18,34 +18,89 @@ class picture {
 }
 
 
-function agregarProducto(comp) {
-    let id = comp.id;
-    for (const data of datos) {
 
-        if (id == data.id) {c
-            onsole.log(data);
-            productosCarrito.push(Number(data)); 
-            console.log(productosCarrito);             
-        }
-    }
-}
 let contenedorProductos = document.getElementById('productos');
 const cartProducts = [];
 
-const productos = [new picture(1,'flying moon',13400,'./img/flying moon.jpg'), new picture(2,'waver',15200)]; 
+const productos = [new picture(1,'flying moon',13400,'./img/flying moon.jpg'), new picture(2,'waver',15200, './img/ravenwatercolor.jpeg')]; 
+
+function mostrarCarts() {
 for (let producto of productos) {
     contenedorProductos.innerHTML += `<div class=" card_block wow animate__animated animate__bounceInLeft">
                                         <img src=${producto.img}>
                                         <h3 class="content">${producto.name}</h3>        
                                         <h5 class="content">ARS$ ${producto.price}</h5>
-                                        <button type="submit" id="${producto.id}">add to the cart</button>
+                                        <button type="submit" onclick="agregarProducto(this)"id="${producto.id}">add to the cart</button>
                                     </div>`
 }
+}
+mostrarCarts(productos)
 
-const cartPrice = [];
+let cartChild = document.getElementById('cartChild')    
+
+function agregarProducto(producto) {
+    let id = producto.id;
+    for (const data of productos) {
+
+        if (id == data.id) {
+            console.log(data);
+            cartProducts.push(data); 
+            console.log(cartProducts);      
+        }
+    }
+    Toastify({
+
+        text: 'This is a toast',
+        
+        duration: 3000
+        
+        }).showToast();
+
+        
+        for (let producto of cartProducts) {
+            cartChild.innerHTML += `<div class=" card_block wow animate__animated animate__bounceInLeft">
+                                                <img src=${producto.img}>
+                                                <h3 class="content">${producto.name}</h3>        
+                                                <h5 class="content">ARS$ ${producto.price}</h5>
+                                                <button type="submit" onclick="agregarProducto(this)"id="${producto.id}">add to the cart</button>
+                                            </div>`
+        };
+        
+};
+
 let cart = document.getElementById('cart')
 
-let cartChild = document.getElementById('cartChild')
+function addCart () {
+for (let producto of cartProducts) {
+    cart.innerHTML += `<div class=" card_block wow animate__animated animate__bounceInLeft">
+                                        <img src=${producto.img}>
+                                        <h3 class="content">${producto.name}</h3>        
+                                        <h5 class="content">ARS$ ${producto.price}</h5>
+                                        <button type="submit" onclick="agregarProducto(this)"id="${producto.id}">add to the cart</button>
+                                    </div>`
+};
+}
+addCart()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const cartPrice = [];
+
+
+
+
+
 
 let empty = document.getElementById('empty');
 
@@ -69,11 +124,11 @@ totalContainer.innerText = `ARS$ ${plus(...cartPrice)}`
 total.append(totalContainer);
 
 
-
+/*
 let contiener = document.createElement('div'); 
 
 
-let add2 = document.getElementById('add_2'); 
+let add2 = document.getElementById('add_2'); */
 
 
 
@@ -123,12 +178,11 @@ let buy = document.getElementById('buy');
 lettry = document.getElementById('try');
 
 
-buy.onclick = (event) =>   {
+buy.addEventListener('click', (event) =>   {
     event.preventDefault();
     
     
     cartChild.innerHTML = '<h2>Buy competed!</h2>'
-    contiener.remove()
     Toastify({
 
         text: "the buy is completed",
@@ -142,7 +196,7 @@ buy.onclick = (event) =>   {
         }).showToast();
     
 
-};
+});
 
 
 let example = document.getElementById('try');
