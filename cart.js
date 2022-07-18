@@ -18,13 +18,14 @@ class picture {
 }
 
 
+
 let total = document.getElementById('total');
 
 
 let contenedorProductos = document.getElementById('productos');
 const cartProducts = [];
 
-const productos = [new picture(1,'flying moon',13400,'./img/flying moon.jpg'), new picture(2,'waver',15200, './img/ravenwatercolor.jpeg')]; 
+const productos = [new picture(1,'flying moon',13400,'img/flyingmoon.jpg'), new picture(2,'waver',15200, 'img/ravenwatercolor.jpeg')]; 
 
 function mostrarCarts() {
 for (let producto of productos) {
@@ -86,29 +87,6 @@ function agregarProducto(producto) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-const cartPrice = [];
-
-
-
-
-
-
 let empty = document.getElementById('empty');
 
 
@@ -118,56 +96,6 @@ cartProducts.length === 0 && (empty.innerHTML = '<h2>The cart is empty</h2>');
 
 
 
-
-
-
-/*
-let contiener = document.createElement('div'); 
-
-
-let add2 = document.getElementById('add_2'); */
-
-
-
-
-/* add2.onclick = () => {
-    const picture2 = new picture(2,'waver',15200)
-    cartProducts.push(picture2)
-
-
-    const {id, name, price, img,} = picture2
-
-    cartPrice.push(price);
-    totalContainer.innerText = `ARS$ ${plus(...cartPrice)}`;
-
-    console.log(id)
-    console.log(name)
-    console.log(img)
-    console.log(price)
-    console.log(cart)
-
-
-
-    contiener.innerHTML = `<div class="card_block wow animate__animated animate__bounceInLeft products">
-                            <h3>${picture2.name}</h3>
-                            <h5>ARS$${picture2.price} </h5>
-                            </div>`;
-cartChild.appendChild(contiener);
-
-
-empty.remove();
-total.append(totalContainer);
-
-let artPiece_serialized = JSON.stringify(cartProducts)
-sessionStorage.setItem('cart',artPiece_serialized)
-
-let sesionCart = sessionStorage.getItem('cart');
-
-console.log(sesionCart);
-
-
-};
-*/
 
 
 let buy = document.getElementById('buy');
