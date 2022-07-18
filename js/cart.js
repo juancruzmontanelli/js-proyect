@@ -1,8 +1,4 @@
 
-function plus (number) {
-    return cartPrice.reduce((acc, number) => acc + number, 0)
-}
-
 class picture {
     constructor (id,name, cost, img) {
         this.id = id;
@@ -25,7 +21,7 @@ let total = document.getElementById('total');
 let contenedorProductos = document.getElementById('productos');
 const cartProducts = [];
 
-const productos = [new picture(1,'flying moon',13400,'img/flyingmoon.jpg'), new picture(2,'waver',15200, 'img/ravenwatercolor.jpeg')]; 
+const productos = [new picture(1,'flying moon',13400,'file:///C:/Users/Sansung/OneDrive/Escritorio/cacu/javascritp/proyecto%20final%20-%203/img/flying_moon.jpg'), new picture(2,'waver',15200, 'file:///C:/Users/Sansung/OneDrive/Escritorio/cacu/javascritp/proyecto%20final%20-%203/img/raven_water_color.jpeg')]; 
 
 function mostrarCarts() {
 for (let producto of productos) {
