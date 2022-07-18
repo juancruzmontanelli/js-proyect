@@ -51,6 +51,7 @@ function agregarProducto(producto) {
                                                 <img src=${data.img}>
                                                 <h3 class="content">${data.name}</h3>        
                                                 <h5 class="content">ARS$ ${data.price}</h5>
+                                                <button id="delete${data.id}">delete</button>
                                             </div>`    
             
             const totalBuy = cartProducts.reduce ((acc, the) => acc + the.price, 0)
@@ -60,10 +61,10 @@ function agregarProducto(producto) {
             total.innerHTML = `<div class="flex_card" id="total">
                                 <h2>ARS$ ${totalBuy} </h2>
                                 </div>
-                                `
+                                `;
 
 
-        }
+
     }
     Toastify({
 
@@ -134,4 +135,4 @@ example.addEventListener('click',() => {
     
 })
 
-
+}
