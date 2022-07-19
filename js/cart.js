@@ -15,25 +15,42 @@ class picture {
 
 
 
+
 let total = document.getElementById('total');
 
 
 let contenedorProductos = document.getElementById('productos');
 const cartProducts = [];
 
-const productos = [new picture(1,'flying moon',13400,'file:///C:/Users/Sansung/OneDrive/Escritorio/cacu/javascritp/proyecto%20final%20-%203/img/flying_moon.jpg'), new picture(2,'waver',15200, 'file:///C:/Users/Sansung/OneDrive/Escritorio/cacu/javascritp/proyecto%20final%20-%203/img/raven_water_color.jpeg')]; 
+const productos = []; 
 
-function mostrarCarts() {
-for (let producto of productos) {
-    contenedorProductos.innerHTML += `<div class=" card_block wow animate__animated animate__bounceInLeft">
+
+
+
+fetch('../data.json')
+    .then( (res) => res.json())
+    .then( (data) => {
+
+        data.forEach((producto) => {
+            console.log(producto)
+            
+            productos.push(producto)
+            console.log(productos)
+            contenedorProductos.innerHTML += `<div class=" card_block wow animate__animated animate__bounceInLeft">
                                         <img src=${producto.img}>
                                         <h3 class="content">${producto.name}</h3>        
                                         <h5 class="content">ARS$ ${producto.price}</h5>
                                         <button type="submit" onclick="agregarProducto(this)"id="${producto.id}">add to the cart</button>
                                     </div>`
-}
-}
-mostrarCarts(productos)
+        })
+        
+    })
+
+    
+
+    
+
+
 
 let cartChild = document.getElementById('cartChild')    
 
@@ -68,18 +85,16 @@ function agregarProducto(producto) {
     }
     Toastify({
 
-        text: 'This is a toast',
+        text: 'you add to the cart',
         
         duration: 3000
         
         }).showToast();
 
         
-    
+    } 
         
 };
-
-
 
 
 
@@ -88,6 +103,7 @@ let empty = document.getElementById('empty');
 
 
 cartProducts.length === 0 && (empty.innerHTML = '<h2>The cart is empty</h2>');
+
 
 
 
@@ -135,4 +151,4 @@ example.addEventListener('click',() => {
     
 })
 
-}
+

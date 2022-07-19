@@ -1,6 +1,6 @@
 [ 
-    { "id": 1, "name":"flying moon", "img": "../img/flying moon.jpg", "price": 13400}, 
-    { "id": 2, "name":"waver", "img": "../img/raven water color.jpeg", "price": 15200}, 
+    { "id": 1, "name":"flying moon", "img": "../img/flying_moon.jpg", "price": 13400}, 
+    { "id": 2, "name":"waver", "img": "../img/raven_water_color.jpeg", "price": 15200}, 
     { "id": 3, "name":"snowdy", "img": "../img/snowland.jpg", "price": 12100}, 
-    { "id": 4, "name":"woolp", "img": "../img/wales wolrd.jpeg", "price":  16800} 
+    { "id": 4, "name":"woolp", "img": "../img/wales_wolrd.jpeg", "price":  16800} 
 ] 
